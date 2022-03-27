@@ -1,1 +1,3 @@
-
+node {
+    stage("Clone")
+}
