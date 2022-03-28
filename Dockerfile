@@ -1,2 +1,3 @@
 FROM centos:7
-RUN yum -y install telnet unzip wget
+RUN yum update -y && \
+    yum -y install telnet unzip wget
