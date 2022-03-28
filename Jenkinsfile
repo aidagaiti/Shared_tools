@@ -16,4 +16,8 @@ node {
     stage ("Push Image") {
         sh "docker push 986127918014.dkr.ecr.us-east-1.amazonaws.com/tools:latest"
     }
+    stage ("Email"){
+        sh "echo Hello" //"/email" 
+    }
+
 }
