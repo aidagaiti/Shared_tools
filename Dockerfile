@@ -12,7 +12,7 @@ RUN yum update -y && \
      wget  https://releases.hashicorp.com/packer/1.7.10/packer_1.7.10_linux_amd64.zip && \
      unzip packer_1.7.10_linux_amd64.zip && \
      mv packer /usr/bin && \
-     packer version
+     packer version && \
 
     #Install Helm 
     curl -O https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz && \
