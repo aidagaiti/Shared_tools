@@ -10,4 +10,5 @@ RUN yum update -y && \
      rm -rf /usr/sbin/packer  && \
      wget  https://releases.hashicorp.com/packer/1.7.10/packer_1.7.10_linux_amd64.zip && \
      unzip packer_1.7.10_linux_amd64.zip && \
-     mv packer /usr/bin 
+     mv packer /usr/bin && \
+     packer version
