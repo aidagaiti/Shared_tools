@@ -1,11 +1,13 @@
 FROM centos:7
 RUN yum update -y && \
     yum -y install telnet unzip wget && \
+
     #Install Terraform 
      wget https://releases.hashicorp.com/terraform/0.14.11/terraform_0.14.11_linux_amd64.zip && \
      unzip terraform_0.14.11_linux_amd64.zip && \
      mv terraform /usr/bin && \
      terraform version && \
+     rm -rf terraform_0.14.11_linux_amd64.zip && \ 
 
      #Install Packer
      rm -rf /usr/sbin/packer  && \
@@ -13,13 +15,16 @@ RUN yum update -y && \
      unzip packer_1.7.10_linux_amd64.zip && \
      mv packer /usr/bin && \
      packer version && \
+     rm -rf packer_1.7.10_linux_amd64.zip && \
 
     #Install Helm 
     curl -O https://get.helm.sh/helm-v3.8.1-linux-amd64.tar.gz && \
     tar -zxvf helm-v3.8.1-linux-amd64.tar.gz && \
     mv linux-amd64/helm /usr/local/bin/helm && \
+    rm -rf  helm-v3.8.1-linux-amd64.tar.gz && \
  
      #Install Kubectl
      curl -LO https://dl.k8s.io/release/v1.23.0/bin/linux/amd64/kubectl && \
      chmod +x kubectl   && \
      mv kubectl /usr/bin/  
+     
